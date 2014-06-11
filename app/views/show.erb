@@ -1,0 +1,22 @@
+ <h2><%="#{@meetup.name}"%></h2>
+ <ul>
+    <li><%= "Location:  #{@meetup.location}" %></li>
+    <li><%= "Description:  #{@meetup.description}" %></li>
+  </ul>
+
+
+<form action="/meetups" method="post">
+
+    <input type="hidden" name="join_meetup" value= "<%= @meetup.id %>" />
+    <input type= "submit" value="Join">
+    <br>
+</form>
+
+<h2>Members of this Meetup:</h2>
+<ul>
+<% @meetup.users.each do |user| %>
+<li><%= user.username %> <br> <img src="<%= user.avatar_url %>" width = "100"/></li>
+<% end %>
+</ul>
+
+<!-- <img src="https://avatars.githubusercontent.com/u/5897805?" width="100"/> -->

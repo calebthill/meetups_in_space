@@ -4,6 +4,10 @@ body {
   color: #FFFFFF;
 }
 
+.textbox {
+  color: black;
+}
+
 a,
 a:visited {
   color: #FFFFFF;

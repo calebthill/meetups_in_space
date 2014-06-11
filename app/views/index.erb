@@ -1,1 +1,18 @@
-<h1><%= @title %></h1>
+<h1><% @meetups.each do |meet| %></h1>
+<ul>
+<li><h2><a href=<%= "/meetups/#{meet.id}"%>><%= "#{meet.name}" %></a></h2></li>
+</ul>
+<%end %>
+
+<div class="textbox"><form action="/" method="post">
+      <label for="Name of Meetup">Name of Meetup:</label>
+      <input class="textbox" type="text" id="meetup_name" name="meetup_name" value="<%= params[:meetup_name] %>"/>
+      <br>
+      <label for="Location">Location:</label>
+      <input class="textbox" type="text" id="location" name="location" value="<%= params[:location] %>"/>
+      <br>
+      <label for="Description">Description:</label>
+      <input class="textbox" type="text" id="description" name="description" value="<%= params[:description] %>"/>
+      <br>
+      <input type="submit"/>
+ </form>
